@@ -22,6 +22,7 @@
     },
     "homepage": "https://github.com/felipeLucaDeTena/felipeLucaDeTena-202202-W2CHW2-felipe-luca-de-tena#readme",
     "devDependencies": {
+        "@babel/plugin-transform-modules-commonjs": "^7.16.8",
         "eslint": "^8.7.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-plugin-import": "^2.25.4",
