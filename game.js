@@ -7,7 +7,7 @@ const testArray = [
 ];
 
 export const myGrid = (a) =>
-    [...Array(a)].map((e) => Array(a).fill(Math.floor(Math.random())));
+    [...Array(a)].map(() => Array(a).fill(Math.floor(Math.random())));
 
 export const filterCoordinates = (grid) => {
     const newGrid = myGrid(grid.length);
