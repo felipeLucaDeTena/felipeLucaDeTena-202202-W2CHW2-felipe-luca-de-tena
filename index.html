@@ -15,10 +15,19 @@
         <title>Game of Life</title>
     </head>
     <body>
-        <div class="container">
-            <h1 class="title">Conway´s Game of Life</h1>
-            <div class="table"></div>
+        <div class="outer-container">
+            <div class="button-container">
+                <button class="controls__play">PLAY</button>
+                <button class="controls__random">Randomize</button>
+            </div>
+            <div class="game-container">
+                <h1 class="title">Conway´s Game of Life</h1>
+                <div class="table"></div>
+            </div>
+            <div class="lexicon-container">
+                <h2 class="lexicon-title">Pattern lexicon</h2>
+            </div>
         </div>
     </body>
-    <script src="./game.js"></script>
+    <script src="./game.js" type="module"></script>
 </html>
