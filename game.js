@@ -1,16 +1,19 @@
-const testArray = [
-    [0, 0, 1, 0, 0],
-    [0, 0, 0, 1, 0],
-    [0, 1, 1, 1, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-];
+function containerArray(rows, cols) {
+    const board = new Array(rows);
+    for (let i = 0; i < rows; i++) {
+        board[i] = new Array(cols);
+        for (let j = 0; j < cols; j++) {
+            board[i][j] = Math.round(Math.random());
+        }
+    }
+    return board;
+}
 
-export const myGrid = (a) =>
-    [...Array(a)].map(() => Array(a).fill(Math.floor(Math.random())));
+const testArray = containerArray(30, 30);
 
-export const filterCoordinates = (grid) => {
-    const newGrid = myGrid(grid.length);
+const freshGrid = (a) => [...Array(a)].map(() => Array(a).fill(0));
+const filterCoordinates = (grid) => {
+    const newGrid = freshGrid(grid.length);
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[i].length; j++) {
             let imAlive = 0;
@@ -56,10 +59,28 @@ export const filterCoordinates = (grid) => {
     return newGrid;
 };
 
-let currentGrid = testArray;
-console.log(currentGrid);
+function paintTable(boardToPlay) {
+    const table = document.querySelector('.table');
+    table.innerHTML = '';
+    for (let i = 0; i < boardToPlay.length; i++) {
+        const row = document.createElement('div');
+        row.classList.add('board-rows');
+        for (let j = 0; j < boardToPlay[i].length; j++) {
+            const column = document.createElement('div');
+            column.classList.add('board-columns');
+            column.id = 'column' + i + j;
+            if (boardToPlay[i][j] === 1) {
+                column.classList.add('living');
+            }
+            row.appendChild(column);
+        }
+        table.appendChild(row);
+    }
+}
 
-export const timer = setInterval(() => {
+let currentGrid = testArray;
+
+setInterval(() => {
     currentGrid = filterCoordinates(currentGrid);
-    console.log(currentGrid);
+    paintTable(currentGrid);
 }, 600);

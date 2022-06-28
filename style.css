@@ -1,16 +1,49 @@
-:root {
-    --grid-cols: 1;
-    --grid-rows: 1;
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',
+        sans-serif;
 }
 
-#container {
-    display: grid;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
+body {
+    background: url('https://wallpaperaccess.com/full/560134.jpg');
 }
 
-.grid-item {
-    padding: 1em;
-    border: 1px solid #ddd;
-    text-align: center;
+.title {
+    margin: 40px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.table {
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.board-rows {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
+
+.board-columns {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: solid 0.1px;
+    background-color: rgb(51, 255, 0);
+}
+
+.living {
+    background-color: black;
 }
